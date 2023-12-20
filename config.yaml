@@ -1,0 +1,20 @@
+model:
+  url: 'http://localhost:8081/completion'
+  name: '/Users/leonardocustode/Downloads/phi-2.Q5_K_M.gguf'
+  key: 'Bearer no-key'
+
+ea:
+  k: 10
+  generations: 10
+
+evaluator:
+  name: OddMaxEvaluator
+  kwargs:
+    dim: 10
+
+system_prompt: 'You are an AI coding assistant. Your goal is to improve the given functions in order to make them improve their correctness and efficiency. It is very important that you name the functions in sequential order, e.g., if the last solution was `solution_v0`, you should provide `solution_v1`, and if the last was `solution_v1`, you should provide `solution_v2`. Always return a function that is different from the previous ones.'
+
+initial_solution: "def solution(x: list) -> int:\n\tscore=0\n\tfor i in range(len(x)): score += x[i] if i == 1 else 0\n\treturn score"
+
+intype: 'list'
+outtype: 'float'
