@@ -49,6 +49,9 @@ class EvolutionaryLoop:
                 prompt += line + '\n'
             prompt += "```\n"
 
+        print("#"*80)
+        print("#" + "prompt".center(78) + "#")
+        print("#"*80)
         print("Prompt:", prompt)
 
         # Generate new pop - sample new individuals

@@ -1,5 +1,6 @@
 import json
 import requests
+import numpy as np
 
 
 class Model:
@@ -65,6 +66,7 @@ class Model:
             "cache_prompt": False,
             "api_key": "",
             "slot_id": 0,
+            "seed": np.random.randint(0, 2**32),
             "prompt": f"{self._system_prompt}<|question|>{prompt}<|question_end|>"
         }
 
